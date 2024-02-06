@@ -69,7 +69,7 @@ const dot = document.createElement("button");
 dot.innerText = dot.mathValue = ".";
 
 dot.addEventListener("click", (e) => {
-    
+
     if (screenInput.value.includes(".")) {
         return
     }
@@ -103,13 +103,20 @@ for (let actionName in actionNames) {
 
     actionButton.addEventListener("click", (e) => {
 
+        if (e.target.action !== "equal") {
+            window.isLastActionEqual = false;
+            window.isValuesSwapped = false;
+        }
+
         switch (e.target.action) {
+
             case "clear": {
                 window.value1 = screenInput.value = 0
             }
                 break;
 
             case "plus": {
+
                 window.value1 = screenInput.value;
                 window.action = "plus";
                 screenInput.value = "";
@@ -124,42 +131,27 @@ for (let actionName in actionNames) {
                 break;
 
             case "equal": {
+                if (window.isLastActionEqual && !window.isValuesSwapped) {
+                    window.value1 = window.value2;
 
-                //15 + 5; = 20
+                    window.isValuesSwapped = true;
+                }
 
-                //value1 - 15;
-                //value2 - 5
-
-
-                // pressed equal
-
-                // value1 = value2 - ete erkrord angam havasarna sexmvel
-
-                // value2 = inp.value
-
-
-                let value2;
-
-
-                //added test comment
-
-                // if (window.value1) {
-                //     screenInput.value = "";
-                // }
+                window.value2 = screenInput.value;
 
                 if (window.action === "plus") {
-                    value2 = screenInput.value;
-                    screenInput.value = +window.value1 + +screenInput.value;
+                    screenInput.value = +window.value1 + +window.value2;
                 }
                 else if (window.action === "minus") {
-                    screenInput.value = +window.value1 - +screenInput.value;
+                    if (isValuesSwapped) {
+                        screenInput.value = +window.value2 - +window.value1;
+                    }
+                    else {
+                        screenInput.value = +window.value1 - +window.value2;
+                    }
                 }
-                // else if (window.action === "equal") {
-                //     screenInput.value = window.secondValue + screenInput.value;
-                // }
-                // window.value1 = value2
-                // window.action = "equal";
-                // window.secondValue = value2;
+
+                window.isLastActionEqual = true;
             }
                 break;
         }
@@ -173,5 +165,23 @@ for (let actionName in actionNames) {
 
 buttons.append(actions);
 
+//
+//git add .
+//git commit
+//git push
 
 
+
+//Agile, Waterfall
+
+//1-4 shabat
+
+//Home page
+
+//Contact Us
+
+//Shop
+
+//Arere
+
+// 15.5.6

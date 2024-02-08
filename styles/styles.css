@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: gray;
+    background-color: rgb(91, 118, 137);
     width: 100%;
     height: 100vh;
     display: flex;
@@ -17,32 +17,31 @@ body {
 .wrapper {
     width: 400px;
     height: 500px;
+    padding: 15px;
     display: flex;
     flex-direction: column;
-    border: 1px solid red;
+    background-color: rgb(32, 32, 32);
+    border-radius: 15px;
 }
 
 .screen {
-    height: 20%;
+    height: 25%;
 }
 
 input {
     width: 100%;
     height: 100%;
     padding: 10px;
-    font-size: 35px;
+    font-size: 45px;
     outline: none;
-}
-
-.screen,
-.buttons {
-    padding: 5px;
+    border: none;
+    color: aliceblue;
+    background-color: rgb(32, 32, 32);
 }
 
 .buttons {
     display: flex;
     flex: 1;
-    padding: 10px;
 }
 
 .numbers {
@@ -57,10 +56,29 @@ input {
     flex: 1;
 }
 
+.actionContainer > button {
+    background-color: rgb(45, 45, 45);
+    color: aliceblue;
+    border: none;
+    border-radius: 15px;
+}
+
+.actionContainer > button:hover, .section > button:hover {
+    background-color: rgb(80, 80, 80);
+    transition: 0.5s;
+} 
 
 .section {
     display: flex;
     flex: 1;
+}
+
+
+.section > button {
+    background-color: rgb(59, 59, 59);
+    color: aliceblue;
+    border: none;
+    border-radius: 15px;
 }
 
 .section:first-child button,
@@ -83,7 +101,7 @@ input {
 
 button {
     display: flex;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 500;
     border: 1px solid;
     flex: 1;

@@ -165,23 +165,4 @@ for (let actionName in actionNames) {
 
 buttons.append(actions);
 
-//
-//git add .
-//git commit
-//git push
-
-
-
 //Agile, Waterfall
-
-//1-4 shabat
-
-//Home page
-
-//Contact Us
-
-//Shop
-
-//Arere
-
-// 15.5.6
